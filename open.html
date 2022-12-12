@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<script>
+//! 登录
+window.onload=login;
+function login() {
+  var token = "js_tokenString";
+  loginSucceed(token);
+}
+
+//! 登录成功
+function loginSucceed(token) {
+  var action = "https://www.taobao.com";
+  window.webkit.messageHandlers.openUrl.postMessage(action, token);
+  window.webkit.messageHandlers.openAppUrl.postMessage(action, token);
+}
+</script>
+</html>
